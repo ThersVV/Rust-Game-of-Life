@@ -137,27 +137,28 @@ fn main() {
                 is_paused = !is_paused;
             };
             if let Button::Keyboard(Key::Up) = press_args {
-                look_y = look_y + 20.0;
+                look_y = look_y + 50.0;
             };
             if let Button::Keyboard(Key::Down) = press_args {
-                look_y = look_y - 20.0;
+                look_y = look_y - 50.0;
             };
             if let Button::Keyboard(Key::Left) = press_args {
-                look_x = look_x + 20.0;
+                look_x = look_x + 50.0;
             };
             if let Button::Keyboard(Key::Right) = press_args {
-                look_x = look_x - 20.0;
+                look_x = look_x - 50.0;
             };
             if let Button::Mouse(MouseButton::Left) = press_args {
                 let mouse_coords_as_cords = Cords {
-                    x: ((mouse_coords[0] - look_x) as usize / cell_size) as i32,
-                    y: ((mouse_coords[1] - look_y) as usize / cell_size) as i32,
+                    x: ((mouse_coords[0] - look_x) / cell_size as f64) as i32,
+                    y: ((mouse_coords[1] - look_y) / cell_size as f64) as i32,
                 };
                 match grid.get(&mouse_coords_as_cords) {
-                    Some(Life::Alive) => grid_copy.insert(mouse_coords_as_cords, Life::Dead),
-                    _ => {insert_neighbours(&mut grid_copy, &mouse_coords_as_cords);
-                            grid_copy.insert(mouse_coords_as_cords, Life::Alive)},
+                    Some(Life::Alive) => &grid.insert(mouse_coords_as_cords, Life::Dead),
+                    _ => {insert_neighbours(&mut grid, &mouse_coords_as_cords);
+                            &grid.insert(mouse_coords_as_cords, Life::Alive)},
                 };
+                grid_copy = grid.clone();
             };
         };
 
