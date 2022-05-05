@@ -1,0 +1,15 @@
+[package]
+name = "gol"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+vecmath = "1.0.0"
+piston2d-graphics = "0.42.0"
+piston2d-opengl_graphics = "0.80.0"
+piston = "0.53.1"
+pistoncore-sdl2_window = "0.68.0"
+grid = "0.2.3"
+arraymap = "0.1.1"
