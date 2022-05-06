@@ -6,7 +6,7 @@ extern crate sdl2_window;
 use graphics::{Transformed, rectangle::{Rectangle, square}};
 use opengl_graphics::{OpenGL, GlGraphics};
 use piston::{event_loop::{EventSettings, Events}, input::{Button, Key, MouseButton, MouseCursorEvent, PressEvent, RenderEvent}, window::WindowSettings};
-use sdl2_window::Sdl2Window as  ;
+use sdl2_window::Sdl2Window as Window;
 use std::{fmt, cmp::Ordering, collections::BTreeMap};
 #[derive(Clone, Eq, PartialEq)]
 enum Life {
