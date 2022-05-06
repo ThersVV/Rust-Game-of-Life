@@ -21,12 +21,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234"
 
 [[package]]
-name = "arraymap"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47a0618a0d3f3ea1dc31d76667b4f2c3a3b6f2b8183e103c8b4baaa59fefa416"
-
-[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -172,20 +166,11 @@ dependencies = [
 name = "gol"
 version = "0.1.0"
 dependencies = [
- "arraymap",
- "grid",
  "piston",
  "piston2d-graphics",
  "piston2d-opengl_graphics",
  "pistoncore-sdl2_window",
- "vecmath",
 ]
-
-[[package]]
-name = "grid"
-version = "0.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4e29f0e1bb805d91745d2c5efb6e472cb18c7cb4dcd0c1f9de1997857737304"
 
 [[package]]
 name = "hermit-abi"

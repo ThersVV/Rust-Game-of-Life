@@ -3,18 +3,11 @@ extern crate opengl_graphics;
 extern crate piston;
 extern crate sdl2_window;
 
-use graphics::rectangle::square;
-use graphics::rectangle::Rectangle;
-use graphics::Transformed;
-use opengl_graphics::*;
-use piston::event_loop::*;
-use piston::input::*;
-use piston::window::WindowSettings;
-use sdl2_window::Sdl2Window as Window;
-use std::cmp::Ordering;
-use std::collections::BTreeMap;
-use std::fmt;
-use std::ops::Not;
+use graphics::{Transformed, rectangle::{Rectangle, square}};
+use opengl_graphics::{OpenGL, GlGraphics};
+use piston::{event_loop::{EventSettings, Events}, input::{Button, Key, MouseButton, MouseCursorEvent, PressEvent, RenderEvent}, window::WindowSettings};
+use sdl2_window::Sdl2Window as  ;
+use std::{fmt, cmp::Ordering, collections::BTreeMap};
 #[derive(Clone, Eq, PartialEq)]
 enum Life {
     Alive,
@@ -30,16 +23,6 @@ impl fmt::Display for Life {
         match self {
             Life::Alive => write!(f, "Alive"),
             Life::Dead => write!(f, "Dead"),
-        }
-    }
-}
-impl Not for Life {
-    type Output = Self;
-
-    fn not(self) -> Self::Output {
-        match self {
-            Life::Alive => return Life::Dead,
-            Life::Dead => return Life::Alive,
         }
     }
 }
